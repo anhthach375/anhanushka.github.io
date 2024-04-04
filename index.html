@@ -1,0 +1,181 @@
+    <title>Group 1</title>
+    </head>
+    
+    <body bgcolor=#fcb6ef text="BLACK">
+    <h1><center> This is COMSC100's Diary &#9829; </center></h1>
+
+    <body>      
+       
+      <div style="margin-left: auto; margin-right: auto; margin-top: 40px;
+      padding: 20px; width: 500px; font-size: 16px; font-family:'Segoe UI', sans-serif;">
+      Mina-Bot👧
+     
+     <div style=" margin-top:6px; padding: 20px; background-color: #E1F4FB;
+     border: 4px solid #8ec8df; border-radius: 25px;">
+  
+      <form name="chatForm">
+          <p id="botSays">What is your name ? </p>
+          <br>         
+          <input type="text" name="userInput" >
+          <input type="button" value="Send" onClick="displayFeedback(this.form)">
+  
+      </form>
+     </div>
+     </div>  
+  
+  <script>
+  
+  var counter=0;
+  var totalQuestions=5;
+  
+  var myGraduationYear= 2027;
+  var myMajor="history";
+  
+  //create a list of the majors you are/ were interested in
+  var majorInterestedList=["sociology", "psychology", "datascience", "neuroscience" ];
+
+  // create a list of fav artist
+  var favArtistList = ["taylor swift", "justin bieber","melo-d","billie eilish"]
+  
+  var userName;
+  
+      function displayFeedback(form) {
+  
+          counter++;
+  
+          var feedbackText="";
+          var newQuestionText="";
+  
+          var userInput= form.userInput.value;
+
+  
+          if (counter==1) {        
+              userName= userInput;
+              feedbackText="Hello, "+ userName+" ! " +"<br>Nice to meet you."+
+              " I am Mina, a freshman at Mount Holyoke College.";
+  
+              newQuestionText="Do you also attend Mount Holyoke College ?";              
+          }
+  
+          if (counter==2) {        
+              feedbackText="Thanks for sharing."; 
+              newQuestionText="What is your major ?";              
+          }
+  
+          if (counter==3) {     
+              if (userInput.toLowerCase()== myMajor) feedbackText="Great! I am also majoring in "+ userInput+"."; 
+              
+              else {
+                  feedbackText="I guess you must find "+userInput+" very interesting."+" I am majoring in "+myMajor;
+                  
+                  //check if user's major is one the majors in your majorInterestedList 
+                  for (let i = 0; i < majorInterestedList.length; i++) {      
+                      if (userInput.toLowerCase() == majorInterestedList[i]) {
+                          feedbackText=userInput+ " was one of the majors I was interested to pursue."+
+                          " I am now majoring in "+myMajor+".";
+                      }    
+                  }
+          }
+  
+          newQuestionText="When are you graduating ?"; 
+          }
+  
+          if (counter==4) {     
+              if (userInput== myGraduationYear) feedbackText="I am also graduating the same year ! ";  
+              else if (userInput< myGraduationYear) feedbackText="Nice. You will be graduating earlier than me."; 
+              else if (userInput> myGraduationYear) feedbackText="Nice. I will be graduating in "+ myGraduationYear+", a bit later than you.";
+              else feedbackText="Thanks for sharing.";  
+
+              newQuestionText="Who is your favourite artist?"; 
+          }
+
+          if (counter == 5) {
+              feedbackText="Wow, never heard of "+userInput+". I guess I have new artist to listen to now :D"
+
+              for (let i = 0; i < favArtistList.length; i++) {      
+                      if (userInput.toLowerCase() == favArtistList[i]) {
+                          feedbackText=userInput+ " is also my favourite aritis!";
+                      }    
+              }
+              
+          }
+          
+          //if you have reached the last question
+          if (counter>=totalQuestions ) {
+              feedbackText=feedbackText+"<br><br>It was nice talking to you, "+userName+"."+
+              "<br>I hope you have a great day!";           
+          }
+        
+          //update the feedback and clear the input box
+          document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+          form.userInput.value=""; 
+      }
+  
+  </script>
+  </body>
+  
+    <br>Today's is the first time I learn <i>HTML</i>, it's interesting !!!
+    <br> We are doing HTML today. It is fun but confusing as well. We are happy that we are learning this. We can make our own website now.. Yayyyy!!!! <br>
+    <br> It seems like some students with Mac having the problems with opening HTML file &#128542; But our group is doing fine hihi :D <br>
+    <br> We will be done with our lab by the end of the class. We will not have to do this at home. This is a good news. We will have time to do other assignments. <br>
+    <h2> &#128215; Here are some interesting tutorials to learn <i>HTML</i> </h2>
+    <ul>
+    <li> Click <a href="https://www.w3schools.com/html/"> here </a> for the first tutorial </li>
+    <li> Click <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/"> here </a> for the second tutorial </li>
+    </ul>
+    
+    <h2>&#128204; Here is few things you should pay attention if this is the first time you learn HTML: </h2>
+        <body>
+            <ol>
+                <li> ELements and Tags </li>
+                <li> Attributes </li>
+                <li> Text Formatting </li>
+            </ol>
+        </body>
+        
+    <h2>&#128336; This is how much time it took us to finish today's lab: </h2>
+    <table style="border: 1px solid gray; width:20%;">
+        <tr>
+          <th>Topic</th>
+          <th>Time allocated</th>
+          <th>Gradew</th>
+        </tr>
+        <tr>
+          <td>HTML Tags</td>
+          <td>45mins</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>Attributes and formatting</td>
+          <td>45mins</td>
+          <td>A</td>
+        </tr>
+      </table>
+    <h2>&#128514; We will attach few meme so you can have a good lab! :D </h2>
+    <center><img src="memeCS.jpeg" width="300" height="400"> </center>
+    <center><img src="https://plus.unsplash.com/premium_photo-1664392309182-017207df3537?q=80&w=2741&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="300" height="350"> </center>
+
+    <h2>&#127911; This is the relaxing music that you can listen to during lab </h2>
+    <center>
+        <audio controls>
+            <center><source src="relax.mp3" type="audio/mpeg"></center>
+        </audio>
+    </center>
+    <h2>&#128187; This is what coding screen looks like </h2>
+    <center>
+        <video width="320" height="240" controls>
+            <source src="coding_screen.mp4" type="video/mp4">
+        </video>
+    </center>
+
+    <h2>&#128330; Do you have any suggestions for our website, please write us some feedback! </h2>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+      <label for="feedback">Feedback and Suggestions:</label><br>
+      <input type="text" id="feedback" feedback="feedback"><br>
+      <br><input type="submit" value="Submit"><br>  
+    </form>
+ 
